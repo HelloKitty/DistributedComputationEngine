@@ -20,28 +20,55 @@ namespace Distributed.Code
 
 		/// <summary>
 		/// Member that will contain a list of all the required assemblies needed for the code to compile
-		/// on remote machines.
+		/// on remote machines. Provides only public enumerable access to elements.
+		/// </summary>
+		public IEnumerable<string> assembliesNeeded
+		{
+			get { return _assembliesNeeded; }
+		}
+		
+		/// <summary>
+		/// Serialized collection of assemblies needed to compile the code.
 		/// </summary>
 		[ProtoMember(2, IsRequired = false)]
-		protected List<string> assembliesNeeded;
+		private ICollection<string> _assembliesNeeded;
+		
 
 		public CodeData(string code)
 		{
 			internalStringCode = code;
-			assembliesNeeded = new List<string>();
+			_assembliesNeeded = new List<string>();
 		}
 
 		//Protobuf constructor
-		protected CodeData()
+		private CodeData()
 		{
 
 		}
 
-		public virtual void AddReferencedAssembly(string ass)
+		public void AddReferencedAssembly(string ass)
 		{
 			//TODO: Implement
-			if (!assembliesNeeded.Contains(ass))
+			if (!_assembliesNeeded.Contains(ass))
+			{
 				Console.WriteLine("\nAdded assembly " + ass + " to CodeData from desired code.");
+				_assembliesNeeded.Add(ass);
+			}
+			else
+				Console.WriteLine("\nFound duplicate assembly " + ass + " referenced multiple times by method.");
+		}
+		
+		public void AddReferencedAssembly(ImportAttribute attr)
+		{
+			AddReferencedAssembly(attr.AssemblyName);
+		}
+		
+		public void AddReferencedAssembly(IEnumerable<ImportAttribute> attrs)
+		{
+			var names = attrs.Select(x => x.AssemblyName);
+			
+			foreach(string s in names)
+				AddReferencedAssembly(s);
 		}
 	}
 }
