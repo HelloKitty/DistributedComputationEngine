@@ -1,0 +1,7 @@
+c:\users\andrew blakely\documents\Distributed Processing\Common\bin\Debug\Common.dll
+c:\users\andrew blakely\documents\Distributed Processing\Common\bin\Debug\Common.pdb
+c:\users\andrew blakely\documents\Distributed Processing\Common\bin\Debug\protobuf-net.dll
+c:\users\andrew blakely\documents\Distributed Processing\Common\bin\Debug\protobuf-net.pdb
+c:\users\andrew blakely\documents\Distributed Processing\Common\bin\Debug\protobuf-net.xml
+c:\users\andrew blakely\documents\Distributed Processing\Common\obj\Debug\Common.dll
+c:\users\andrew blakely\documents\Distributed Processing\Common\obj\Debug\Common.pdb
