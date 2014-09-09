@@ -31,6 +31,9 @@ namespace Distributed.Compile
 		
 		#endregion
 		
-		public RetrieveDynamicAssembly()
+		public /*SomeResultsType*/ ExecuteMethod(byte[] msilByteArray)
+		{
+			
+		}
 	}
 }
