@@ -17,7 +17,7 @@ namespace Distributed.Code
 	/// regarding computation methods.
 	/// </summary>
 	[ProtoContract]
-	public interface ICodePackage
+	public interface IComputationPackage
 	{
 		/// <summary>
 		/// Members indicates the version number for a given executable
@@ -31,6 +31,5 @@ namespace Distributed.Code
 		
 		[ProtoMember(3, IsRequired=true)]
 		ComputationMethod.MSLanguage Language { get; protected set; }
-		
 	}
 }
