@@ -17,6 +17,7 @@ namespace Distributed.Code
 	/// regarding computation methods.
 	/// </summary>
 	[ProtoContract]
+	[ProtoInclude(1, typeof(ComputationPackage))]
 	public interface ICodePackage
 	{
 		/// <summary>
@@ -25,11 +26,11 @@ namespace Distributed.Code
 		/// </summary>
 		[ProtoMember(1, IsRequired = true)]
 		int Version { get; protected set; }
-
-		[ProtoMember(2, IsRequired=true)]
-		CodeData SerializerReadyCodeData { get; protected set; }
 		
-		[ProtoMember(3, IsRequired=true)]
+		[ProtoMember(2, IsRequired=true)]
 		ComputationMethod.MSLanguage Language { get; protected set; }
+		
+		bool RegisterMethod(CodeData code, byte typeByteSignifier);
+		bool TryGetMethod(byte typeByteSignifier, out CodeData data);
 	}
 }
