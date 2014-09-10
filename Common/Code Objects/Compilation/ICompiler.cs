@@ -9,7 +9,7 @@ namespace Distributed.Code
 {
 	public interface ICompiler
 	{
-		MethodInfo ComputationMethod { get; }
+		bool isCompiled { get; }
 		bool Compile(CompileSettings settings = CompileSettings.Default);
 	}
 }
