@@ -13,9 +13,8 @@ using Distributed.Networking;
 namespace Distributed.Code
 {
 	/// <summary>
-	/// Class will be a sub-package that the WorkOrder package packet will be carrying
-	/// when it heads to the master server from the master client to then be handled
-	/// there.
+	/// Contract that may be implemented on a serializable wire type that will carry a payload of information
+	/// regarding computation methods.
 	/// </summary>
 	[ProtoContract]
 	public interface ICodePackage
