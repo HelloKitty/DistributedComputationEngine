@@ -17,7 +17,7 @@ namespace Distributed.Code
 		/// on the recieving clients for execution.
 		/// </summary>
 		[ProtoMember(1, IsRequired = true)]
-		public string internalStringCode { get; protected set; }
+		public string CodeString { get; protected set; }
 
 		/// <summary>
 		/// Member that will contain a list of all the required assemblies needed for the code to compile
@@ -37,7 +37,7 @@ namespace Distributed.Code
 
 		public CodeData(string code)
 		{
-			internalStringCode = code;
+			CodeString = code;
 			_assembliesNeeded = new List<string>();
 		}
 
