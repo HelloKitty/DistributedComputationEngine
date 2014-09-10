@@ -7,6 +7,8 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Distributed.Compile;
+using Distributed.Networking;
 
 namespace Distributed.Code
 {
@@ -16,7 +18,7 @@ namespace Distributed.Code
 	/// there.
 	/// </summary>
 	[ProtoContract]
-	public class CodePackage
+	public class CodePackage : Packet
 	{
 		/// <summary>
 		/// Members indicates the version number for a given executable
@@ -27,16 +29,35 @@ namespace Distributed.Code
 
 		[ProtoMember(2, IsRequired=true)]
 		public CodeData SerializerReadyCodeData { get; protected set; }
+		
+		[ProtoMember(3, IsRequired=true)]
+		public ComputationMethod.MSLanguage Language { get; protected set; }
 
-		public CodePackage(CodeData codeDataObject)
+		public CodePackage(CodeData codeDataObject, ComputationMethod methodInfo)
 		{
 			SerializerReadyCodeData = codeDataObject;
+			this.Version = methodInfo.Version;
+			this.Language = methodInfo.Language;
+		}
+		
+		public CodePacake(string code, IEnumerable<ImportAttribute> imports, ComputationMethod methodInfo)
+		{
+			this.SerializerCodeData = new CodeData(code);
+			SerializerCodeData.AddReferencedAssembly(imports);
+			
+			this.Version = methodInfo.Version;
+			this.Language = methodInfo.Language;
 		}
 
 		//Protobuf constructor
 		protected CodePackage()
 		{
 
+		}
+		
+		public override bool ValidatePacket()
+		{
+			return SerializerCodeData != null && SerializerCodeData.CodeString;
 		}
 	}
 }
