@@ -17,7 +17,7 @@ namespace Distributed.Code
 	/// regarding computation methods.
 	/// </summary>
 	[ProtoContract]
-	public interface IComputationPackage
+	public interface ICodePackage
 	{
 		/// <summary>
 		/// Members indicates the version number for a given executable
