@@ -17,7 +17,7 @@ namespace Distributed.Code
 	/// regarding computation methods.
 	/// </summary>
 	[ProtoContract]
-	[ProtoInclude(1, typeof(ComputationPackage))]
+	[ProtoInclude(500, typeof(ComputationPackage))]
 	public interface ICodePackage
 	{
 		/// <summary>
