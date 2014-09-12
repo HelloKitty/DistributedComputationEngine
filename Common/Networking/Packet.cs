@@ -29,7 +29,8 @@ namespace Distributed.Networking
 		/// <returns>Returns true if the packet is in a handlable state.</returns>
 		public abstract bool ValidatePacket();
 
-		public virtual void OnRecieve()
+		[ProtoAfterDeserialization]
+		public virtual void OnDeserialized()
 		{
 			//This obviously can be an Action because that can't be serialized easily.
 		}

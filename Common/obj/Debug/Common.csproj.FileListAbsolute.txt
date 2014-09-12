@@ -12,3 +12,4 @@ C:\Users\Andrew Blakely\Documents\GitHub\DistributedComputationEngine\Common\bin
 C:\Users\Andrew Blakely\Documents\GitHub\DistributedComputationEngine\Common\bin\Debug\protobuf-net.dll
 C:\Users\Andrew Blakely\Documents\GitHub\DistributedComputationEngine\Common\bin\Debug\protobuf-net.pdb
 C:\Users\Andrew Blakely\Documents\GitHub\DistributedComputationEngine\Common\bin\Debug\protobuf-net.xml
+C:\Users\Andrew Blakely\Documents\GitHub\DistributedComputationEngine\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache

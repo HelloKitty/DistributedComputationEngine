@@ -12,9 +12,15 @@ namespace Distributed.Work
 	[ProtoContract]
 	public class WorkOrder : PacketType
 	{
+		/// <summary>
+		/// Contains a payload of information related to the computation method that will be excuted on terminal clients.
+		/// </summary>
 		[ProtoMember(1, IsRequired = true)]
 		public ICodePackage ComputationInfoContainer { get; private set; }
 		
+		/// <summary>
+		/// Contains a payload of information that will be used to partition a dataset for distribution for the server.
+		/// </summary>
 		[ProtoMember(2, IsRequired = true)]
 		public ICodePackage WorkDelegateContainer { get; private set; }
 		
@@ -31,7 +37,7 @@ namespace Distributed.Work
 			throw new NotImplementedException("Implement this please");
 		}
 		
-		private bool ValidateICodePackage()
+		private bool ValidateCodePackages()
 		{
 			throw new NotImplementedException("Implement this please");
 		}
