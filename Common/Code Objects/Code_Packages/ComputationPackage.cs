@@ -1,4 +1,7 @@
 
+using Distributed.Compile;
+using ProtoBuf;
+using System.Collections.Generic;
 namespace Distributed.Code
 {
 	[ProtoContract]
@@ -13,30 +16,31 @@ namespace Distributed.Code
 		public int Version { get; protected set; }
 		
 		public ComputationMethod.MSLanguage Language { get; protected set; }
-		
+
 		[ProtoMember(3, IsRequired = true)]
-		private IDictionary<byte, CodeData> SerializerReadyCodeCollection { get; private set; }
+		private IDictionary<byte, CodeData> SerializerReadyCodeCollection;
 		
 		public ComputationPackage(ComputationMethod info)
 		{
 			Version = info.Version;
 			Language = info.Language;
-			SerializerReadyCodeCollection = Dictionary<byte, CodeData>(3);
+			SerializerReadyCodeCollection = new Dictionary<byte, CodeData>(3);
 		}
 		
 		#region ICodePackage Explict Method Implementation
 		bool ICodePackage.RegisterMethod(CodeData codeData, byte typeByteSignifier)
 		{
-			if(SerializerReadyCodeCollection.HasKey(typeByteSignifier) 
+			if(SerializerReadyCodeCollection.Keys.Contains(typeByteSignifier) 
 			&& SerializerReadyCodeCollection[typeByteSignifier] != null)
 				return false;
-				
-			SerializerReadyCodeCollection[typeByteSignifier] = codeData
+
+			SerializerReadyCodeCollection[typeByteSignifier] = codeData;
+			return true;
 		}
 		
 		bool ICodePackage.TryGetMethod(byte typeByteSignifier, out CodeData data)
 		{
-			if(!SerializerReadyCodeCollection.HasKey(typeByteSignifier) 
+			if(!SerializerReadyCodeCollection.Keys.Contains(typeByteSignifier) 
 			|| SerializerReadyCodeCollection[typeByteSignifier] == null)
 			{
 				data = null;
@@ -51,12 +55,12 @@ namespace Distributed.Code
 		#region Methods that 'hide' ICodePackage methods
 		public bool RegisterMethod(CodeData codeData, ComputationMethodType type)
 		{
-			return ICodePackage.RegisterMethod((byte)type);
+			return ((ICodePackage)this).RegisterMethod(codeData, (byte)type);
 		}
 		
 		public bool TryGetMethod(byte typeByteSignifier, out CodeData data)
 		{
-			return ICodePackage.RegisterMethod((byte)type);
+			return ((ICodePackage)this).TryGetMethod(typeByteSignifier, out data);
 		}
 		#endregion
 		

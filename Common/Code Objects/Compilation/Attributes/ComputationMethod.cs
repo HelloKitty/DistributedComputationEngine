@@ -1,5 +1,6 @@
 
 
+using System;
 namespace Distributed.Compile
 {
 	public class ComputationMethod : Attribute

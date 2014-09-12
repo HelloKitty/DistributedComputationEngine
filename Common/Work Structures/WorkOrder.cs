@@ -1,4 +1,6 @@
-﻿using ProtoBuf;
+﻿using Distributed.Code;
+using Distributed.Networking;
+using ProtoBuf;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,10 +16,10 @@ namespace Distributed.Work
 		public ICodePackage ComputationInfoContainer { get; private set; }
 		
 		[ProtoMember(2, IsRequired = true)]
-		public ICodePacakge WorkDelegationContainer { get; private set; }
+		public ICodePackage WorkDelegateContainer { get; private set; }
 		
 		//Protobuf-net constructor
-		protected WorkOrder(ICodePacakge compInfo, ICodePackage workDelegate)
+		protected WorkOrder(ICodePackage compInfo, ICodePackage workDelegate)
 		{
 			ComputationInfoContainer = compInfo;
 			WorkDelegateContainer = workDelegate;
@@ -26,12 +28,12 @@ namespace Distributed.Work
 		#region Packet Validation Methods
 		public override bool ValidatePacket()
 		{
-			
+			throw new NotImplementedException("Implement this please");
 		}
 		
 		private bool ValidateICodePackage()
 		{
-			
+			throw new NotImplementedException("Implement this please");
 		}
 		#endregion
 		

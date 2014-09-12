@@ -25,10 +25,10 @@ namespace Distributed.Code
 		/// package of code.
 		/// </summary>
 		[ProtoMember(1, IsRequired = true)]
-		int Version { get; protected set; }
-		
-		[ProtoMember(2, IsRequired=true)]
-		ComputationMethod.MSLanguage Language { get; protected set; }
+		int Version { get; }
+
+		[ProtoMember(2, IsRequired = true)]
+		ComputationMethod.MSLanguage Language { get; }
 		
 		bool RegisterMethod(CodeData code, byte typeByteSignifier);
 		bool TryGetMethod(byte typeByteSignifier, out CodeData data);
