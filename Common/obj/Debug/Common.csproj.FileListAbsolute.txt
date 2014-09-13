@@ -5,11 +5,10 @@ c:\users\andrew blakely\documents\Distributed Processing\Common\bin\Debug\protob
 c:\users\andrew blakely\documents\Distributed Processing\Common\bin\Debug\protobuf-net.xml
 c:\users\andrew blakely\documents\Distributed Processing\Common\obj\Debug\Common.dll
 c:\users\andrew blakely\documents\Distributed Processing\Common\obj\Debug\Common.pdb
-C:\Users\Andrew Blakely\Documents\GitHub\DistributedComputationEngine\Common\obj\Debug\Common.dll
-C:\Users\Andrew Blakely\Documents\GitHub\DistributedComputationEngine\Common\obj\Debug\Common.pdb
 C:\Users\Andrew Blakely\Documents\GitHub\DistributedComputationEngine\Common\bin\Debug\Common.dll
 C:\Users\Andrew Blakely\Documents\GitHub\DistributedComputationEngine\Common\bin\Debug\Common.pdb
 C:\Users\Andrew Blakely\Documents\GitHub\DistributedComputationEngine\Common\bin\Debug\protobuf-net.dll
 C:\Users\Andrew Blakely\Documents\GitHub\DistributedComputationEngine\Common\bin\Debug\protobuf-net.pdb
 C:\Users\Andrew Blakely\Documents\GitHub\DistributedComputationEngine\Common\bin\Debug\protobuf-net.xml
-C:\Users\Andrew Blakely\Documents\GitHub\DistributedComputationEngine\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+C:\Users\Andrew Blakely\Documents\GitHub\DistributedComputationEngine\Common\obj\Debug\Common.dll
+C:\Users\Andrew Blakely\Documents\GitHub\DistributedComputationEngine\Common\obj\Debug\Common.pdb

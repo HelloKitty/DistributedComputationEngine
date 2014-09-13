@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "..\Common\Common.csproj", "{6915A613-93EE-415C-A5C7-1DB87C8E5348}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterTerminal", "MasterTerminal\MasterTerminal.csproj", "{49311E17-4F71-4F1D-AB50-F6D81E860E5B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{6915A613-93EE-415C-A5C7-1DB87C8E5348}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6915A613-93EE-415C-A5C7-1DB87C8E5348}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6915A613-93EE-415C-A5C7-1DB87C8E5348}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49311E17-4F71-4F1D-AB50-F6D81E860E5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49311E17-4F71-4F1D-AB50-F6D81E860E5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49311E17-4F71-4F1D-AB50-F6D81E860E5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49311E17-4F71-4F1D-AB50-F6D81E860E5B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

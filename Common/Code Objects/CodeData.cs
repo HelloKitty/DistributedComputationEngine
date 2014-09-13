@@ -1,5 +1,4 @@
-﻿using Distributed.Compile;
-using ProtoBuf;
+﻿using ProtoBuf;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,19 +56,6 @@ namespace Distributed.Code
 			}
 			else
 				Console.WriteLine("\nFound duplicate assembly " + ass + " referenced multiple times by method.");
-		}
-		
-		public void AddReferencedAssembly(ImportAttribute attr)
-		{
-			AddReferencedAssembly(attr.AssemblyName);
-		}
-		
-		public void AddReferencedAssembly(IEnumerable<ImportAttribute> attrs)
-		{
-			var names = attrs.Select(x => x.AssemblyName);
-			
-			foreach(string s in names)
-				AddReferencedAssembly(s);
 		}
 	}
 }

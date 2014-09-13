@@ -7,7 +7,6 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using Distributed.Compile;
 using Distributed.Networking;
 
 namespace Distributed.Code
@@ -28,7 +27,7 @@ namespace Distributed.Code
 		int Version { get; }
 
 		[ProtoMember(2, IsRequired = true)]
-		ComputationMethod.MSLanguage Language { get; }
+		MSLanguage Language { get; }
 		
 		bool RegisterMethod(CodeData code, byte typeByteSignifier);
 		bool TryGetMethod(byte typeByteSignifier, out CodeData data);

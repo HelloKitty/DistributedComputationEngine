@@ -43,11 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Code Objects\CodeData.cs" />
-    <Compile Include="Code Objects\Code_Packages\ComputationPackage.cs" />
-    <Compile Include="Code Objects\Compilation\Attributes\ComputationMethod.cs" />
-    <Compile Include="Code Objects\Compilation\CompileSettingsEnum.cs" />
+    <Compile Include="Code Objects\Code Packages\ComputationPackage.cs" />
+    <Compile Include="Code Objects\Compilation\CompileSettings.cs" />
     <Compile Include="Code Objects\Compilation\ICompiler.cs" />
-    <Compile Include="Code Objects\Compilation\Attributes\ImportAttribute.cs" />
     <Compile Include="Code Objects\ICodePackage.cs" />
     <Compile Include="Networking\Packet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
