@@ -80,7 +80,8 @@
     <Compile Include="Code Interfacing\Parsing\CodeFile.cs" />
     <Compile Include="Code Interfacing\Parsing\ICodeSource.cs" />
     <Compile Include="Code Interfacing\Parsing\IParser.cs" />
-    <Compile Include="Code Interfacing\Parsing\RoslynParser.cs" />
+    <Compile Include="Code Interfacing\Parsing\Roslyn\RoslynMethod.cs" />
+    <Compile Include="Code Interfacing\Parsing\Roslyn\RoslynParser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

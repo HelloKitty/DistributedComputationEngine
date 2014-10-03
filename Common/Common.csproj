@@ -47,6 +47,12 @@
     <Compile Include="Code Objects\Compilation\CompileSettings.cs" />
     <Compile Include="Code Objects\Compilation\ICompiler.cs" />
     <Compile Include="Code Objects\ICodePackage.cs" />
+    <Compile Include="Code Objects\Parser Object Wrappers\IAttribute.cs" />
+    <Compile Include="Code Objects\Parser Object Wrappers\ICallable.cs" />
+    <Compile Include="Code Objects\Parser Object Wrappers\IConstructable.cs" />
+    <Compile Include="Code Objects\Parser Object Wrappers\IMember.cs" />
+    <Compile Include="Code Objects\Parser Object Wrappers\IMethod.cs" />
+    <Compile Include="Code Objects\Parser Object Wrappers\IParametable.cs" />
     <Compile Include="Networking\Packet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Work Structures\WorkOrder.cs" />

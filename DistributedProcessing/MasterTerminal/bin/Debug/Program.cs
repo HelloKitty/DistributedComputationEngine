@@ -1,4 +1,7 @@
-﻿using Microsoft.CodeAnalysis;
+﻿using Distributed.Code;
+using Distributed.Compile;
+using Distributed.Parsing;
+using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Text;
 using System;
@@ -12,16 +15,30 @@ namespace MasterTerminal
 {
 	class Program
 	{
+		//Testing comment
+		[Obsolete("Test")]
 		static void Main(string[] args)
 		{
 
-			SyntaxTree code = CSharpSyntaxTree.ParseText(File.ReadAllText("Program.cs"));
+			RoslynParser<CSharpSyntaxTree> parser = new RoslynParser<CSharpSyntaxTree>();
+			parser.LoadFromSource(new CodeFile("Program.cs"));
 
-			SourceText text;
-			code.TryGetText(out text);
+			parser.MethodString<ComputationMethod>();
 
-			Console.WriteLine(text.ToString());
 			Console.ReadKey();
+
+			/* TEST CODE
+			//SyntaxTree code = CSharpSyntaxTree.ParseText(File.ReadAllText("Program.cs"));
+			RoslynParser<CSharpSyntaxTree> parser = new RoslynParser<CSharpSyntaxTree>();
+			parser.LoadFromSource(new CodeFile("Program.cs"));
+
+			Console.WriteLine(parser.CodeText);
+
+			foreach(string s in parser.DetermineImports())
+			{
+				Console.WriteLine(s);
+			}
+			Console.ReadKey(); */
 		}
 	}
 }

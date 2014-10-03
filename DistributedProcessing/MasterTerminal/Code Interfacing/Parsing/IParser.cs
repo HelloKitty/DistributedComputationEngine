@@ -6,12 +6,11 @@ namespace Distributed.Parsing
 {
 	public interface IParser
 	{
-		string CodeText { get; }
 		void LoadFromSource(ICodeSource source);
 		IEnumerable<string> DetermineImports();
 		
-		string MethodString<T>(T attribute) where T : Attribute;
-		string MethodString(string methodName);
+		IEnumerable<IMethod> GetMethodsTargetedBy<T>() where T : Attribute;
+		IMethod GetMethodTargetedBy<T>() where T : Attribute;
 		
 		/*#region IDiposable Implementation
 		public void Dispose()
